@@ -1,0 +1,79 @@
+body { 
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f8ff;
+}
+
+h1 {
+    color: #333;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.hole {
+    width: 100px;
+    height: 100px;
+    background-color: #8b4513;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.hole {
+    cursor: none; /* Nasconde il cursore solo sopra i cerchi */
+}
+
+
+.hole::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px; 
+    height: 80px;
+    background-image: url('talpa.png'); 
+     background-size: cover; 
+    background-position: center; 
+    transform: translate(-50%, -50%);
+    visibility: hidden; 
+}
+
+.hole.active::after {
+    visibility: visible; 
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f73;
+}
+
+
+body {
+    cursor: default; /* ripristina il cursore predefinito */
+}
+
+#hammer {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('martello.png.png'); 
+    background-size: cover;
+    pointer-events: none; 
+    z-index: 1000;
+}
